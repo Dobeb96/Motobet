@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Motobet - your betting advisor</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'content', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='page_wrapper'>
+      <div id='top_panel_wrapper'>
+        <div id='top_panel'>
+          <%= image_tag 'logo.png', alt: 'Motobet logo', id: 'logo' %>
+          <aside id='additional'>
+            <div>
+              <div class='marked'>Contact us</div>
+              <div class='description'>contact@motobet.pl</div>
+            </div>
+            <div>
+              <div class='marked'><%= link_to 'Who are we' %></div>
+            </div>
+            <div>
+              <div class='marked'><%= link_to 'How does it work'%></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+      <div id='nav_wrapper'>
+        <nav>
+          <ul>
+            <%= link_to '<li class="active">Home</li>'.html_safe %>
+            <%= link_to '<li>Football</li>'.html_safe %>
+            <%= link_to '<li>Esport</li>'.html_safe %>
+            <%= link_to '<li>Moto GP</li>'.html_safe %>
+            <%= link_to '<li>Moto 2</li>'.html_safe %>
+            <%= link_to '<li>Moto 3</li>'.html_safe %>
+            <%= link_to '<li>WSBK</li>'.html_safe %>
+            <%= link_to '<li>Formula 1</li>'.html_safe %>
+          </ul>
+        </nav>
+      </div>
+
+      <aside id='landscape_image'>
+        <div class='purple_dim'></div>
+        <div class='dots_pattern'></div>
+        <div class='flex_wrapper'>
+          <h1>Best betting tips for today from <span class='accent'>motobet</span> TEAM</h1>
+        </div>
+      </aside>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer>
+        <span>&copy; all rights reserved / <a href='http://www.freepik.com' target="_blank">logo design - timmdesign</a></span>
+      </footer>
+    </div>
+  </body>
+</html>
