@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Match starts at:</strong>
+  <%= @formula1.match_starts_at %>
+</p>
+
+<p>
+  <strong>Team 1:</strong>
+  <%= @formula1.team_1 %>
+</p>
+
+<p>
+  <strong>Team 2:</strong>
+  <%= @formula1.team_2 %>
+</p>
+
+<p>
+  <strong>League:</strong>
+  <%= @formula1.league %>
+</p>
+
+<p>
+  <strong>Odds:</strong>
+  <%= @formula1.odds %>
+</p>
+
+<p>
+  <strong>Chance:</strong>
+  <%= @formula1.chance %>
+</p>
+
+<p>
+  <strong>Pick:</strong>
+  <%= @formula1.pick %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @formula1.status %>
+</p>
+
+<p>
+  <strong>Main page:</strong>
+  <%= @formula1.main_page %>
+</p>
+
+<%= link_to 'Edit', edit_formula1_path(@formula1) %> |
+<%= link_to 'Back', formula1s_path %>

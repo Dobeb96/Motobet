@@ -1,5 +1,12 @@
 @import 'constants';
 
+// GENERAL
+a {
+  color: white;
+}
+.wider table {
+  max-width: $max-width * 2 !important;
+}
 #header {
   padding: 1em;
   text-align: left;
@@ -19,13 +26,6 @@
   max-width: $max-width;
   font-family: 'Nothing You Could Do', cursive;
   text-align: right;
-  .sport {
-    border: 1px solid transparent;
-    transition: all .2s;
-  }
-  .sport:hover {
-    border-bottom: 1px solid $secondary-accent;
-  }
 }
 
 // RESULTS TABLE
@@ -52,14 +52,13 @@
       background-color: $secondary-color;
     }
   }
-  td:last-child {
-    font-weight: bold;
+  td.won {
     color: $won;
   }
   td.lost {
     color: $lost;
   }
-  td.undefined {
+  td.undefined, td.draw {
     color: $undefined;
   }
   tbody {
@@ -74,4 +73,15 @@
   margin: 1em auto;
   max-width: $max-width;
   background-color: $secondary-color;
+}
+
+// ADMIN
+.admin_mode, .admin_mode * {
+  border: none !important;
+  color: white;
+  font-family: $secondary-font;
+  background-color: red !important;
+  &:hover {
+    color: black;
+  }
 }

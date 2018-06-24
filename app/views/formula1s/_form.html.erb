@@ -1,0 +1,62 @@
+<%= form_with(model: formula1, local: true) do |form| %>
+  <% if formula1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(formula1.errors.count, "error") %> prohibited this formula1 from being saved:</h2>
+
+      <ul>
+      <% formula1.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :match_starts_at %>
+    <%= form.datetime_select :match_starts_at, id: :formula1_match_starts_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_1 %>
+    <%= form.text_field :team_1, id: :formula1_team_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_2 %>
+    <%= form.text_field :team_2, id: :formula1_team_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :league %>
+    <%= form.text_field :league, id: :formula1_league %>
+  </div>
+
+  <div class="field">
+    <%= form.label :odds %>
+    <%= form.text_field :odds, id: :formula1_odds %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chance %>
+    <%= form.number_field :chance, id: :formula1_chance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pick %>
+    <%= form.text_field :pick, id: :formula1_pick %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :formula1_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :main_page %>
+    <%= form.text_field :main_page, id: :formula1_main_page %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

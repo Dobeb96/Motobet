@@ -3,9 +3,13 @@
 @import 'constants';
 
 body {
+  color: white;
   margin: 0;
   background-color: $primary-color;
   font-family: $primary-font;
+}
+strong {
+  font-weight: normal;
 }
 
 // TOP PANEL
@@ -138,8 +142,66 @@ main {
   padding: 2% 8% 0;
 }
 
+.pagination {
+  color: $primary-accent;
+  font-family: $secondary-font;
+  font-size: 1.5em;
+  span {
+    padding: .2em;
+    a {
+      padding: .2em;
+      text-decoration: none;
+    }
+  }
+}
+
+// INDEX
+#index {
+  padding: 1em 0;
+  margin-top: 2em;
+  max-width: 100%;
+  background-color: $secondary-color;
+  .flexbox {
+    margin: 2em 0;
+    font-family: $secondary-font;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    div {
+      // width: 40%;
+      text-align: center;
+      .white {
+        color: white;
+      }
+      ul, ul a {
+        height: 100%;
+        color: $secondary-accent;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
+  }
+  .description {
+    padding: 0 1em;
+    margin: 2em auto 1em;
+    max-width: $max-width;
+    font-size: .9em;
+    line-height: 1.25em;
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+}
+
 // FOOTER
 footer {
+  margin-top: 1px;
   text-align: center;
   color: white;
   width: 100%;

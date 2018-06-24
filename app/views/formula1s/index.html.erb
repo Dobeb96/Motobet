@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='admin_mode'>edit_mode: on</h1>
+
+<section id='results' class='wider'>
+  <table>
+    <thead>
+      <tr>
+        <th>Match starts at</th>
+        <th>Team 1</th>
+        <th>Team 2</th>
+        <th>League</th>
+        <th>Odds</th>
+        <th>Chance</th>
+        <th>Pick</th>
+        <th>Status</th>
+        <th>Main page</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @formula1s.each do |formula1| %>
+        <tr>
+          <td><%= formula1.match_starts_at %></td>
+          <td><%= formula1.team_1 %></td>
+          <td><%= formula1.team_2 %></td>
+          <td><%= formula1.league %></td>
+          <td><%= formula1.odds %></td>
+          <td><%= formula1.chance %>%</td>
+          <td><%= formula1.pick %></td>
+          <% case formula1.status %>
+          <% when 0 %>
+          <%= '<td class="undefined">AWAITING</td>'.html_safe %>
+          <% when 1 %>
+          <%= '<td class="won">WON</td>'.html_safe %>
+          <% when 2 %>
+          <%= '<td class="lost">LOST</td>'.html_safe %>
+          <% when 3 %>
+          <%= '<td class="lost">DRAW</td>'.html_safe %>
+          <% end %>
+          <td><%= formula1.main_page %></td>
+          <td><%= link_to 'Show', formula1 %></td>
+          <td><%= link_to 'Edit', edit_formula1_path(formula1) %></td>
+          <td><%= link_to 'Destroy', formula1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Add record', new_formula1_path %>
+</section>
