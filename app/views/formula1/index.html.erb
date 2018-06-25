@@ -1,3 +1,11 @@
+<section id='header'>
+  <h1>Today's best picks => Formula 1</h1>
+</section>
+
+<aside id='info1' class='info'>
+  In Formula 1 playing $10 on each bet would make $40 for you in last thirty days
+</aside>
+
 <section id='results'>
   <table>
     <thead>
@@ -13,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @formula1.each do |formula1| %>
+      <% @formula1s.each do |formula1| %>
         <tr>
           <td>
             <% if formula1.match_starts_at.today? %>
@@ -42,5 +50,10 @@
       <% end %>
     </tbody>
   </table>
-  <%= paginate(@formula1) %>
+  <%= paginate(@formula1s) %>
 </section>
+
+  <aside id='legend'>
+    <p><strong>who's better</strong> - which of these two riders would finish first – 1 means rider one, 2 means rider two</p>
+    <p><strong>position</strong> - which position would that rider have – V means he will win, 1-3 means he will be at least 3rd, 1-5 means at least 5th etc.</p>
+  </aside>

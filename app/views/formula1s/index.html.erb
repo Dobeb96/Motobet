@@ -7,8 +7,8 @@
     <thead>
       <tr>
         <th>Match starts at</th>
-        <th>Team 1</th>
-        <th>Team 2</th>
+        <th>Rider one</th>
+        <th>Rider two</th>
         <th>League</th>
         <th>Odds</th>
         <th>Chance</th>
@@ -44,7 +44,7 @@
           <td><%= formula1.main_page %></td>
           <td><%= link_to 'Show', formula1 %></td>
           <td><%= link_to 'Edit', edit_formula1_path(formula1) %></td>
-          <td><%= link_to 'Destroy', formula1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= button_to 'Destroy', formula1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

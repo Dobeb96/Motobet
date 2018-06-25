@@ -7,6 +7,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'content', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag "jquery_ujs" %>
   </head>
 
   <body>
@@ -21,10 +23,12 @@
               <div class='description'>contact@motobet.pl</div>
             </div>
             <div>
-              <div class='marked'><%= link_to 'Who are we' %></div>
+              <div class='marked'><%= link_to 'Who are we',
+                controller: :application, action: :about_us %></div>
             </div>
             <div>
-              <div class='marked'><%= link_to 'How does it work'%></div>
+              <div class='marked'><%= link_to 'How does it work',
+                controller: :application, action: :about_our_work %></div>
             </div>
           </aside>
         </div>
@@ -32,12 +36,11 @@
       <div id='nav_wrapper'>
         <nav>
           <ul>
-            <%= link_to '<li class="active">Home</li>'.html_safe %>
-            <%= link_to '<li>Football</li>'.html_safe %>
-            <%= link_to '<li>Esport</li>'.html_safe %>
-            <%= link_to '<li>Moto GP</li>'.html_safe %>
-            <%= link_to '<li>Moto 2</li>'.html_safe %>
-            <%= link_to '<li>Moto 3</li>'.html_safe %>
+            <%= link_to '<li>Home</li>'.html_safe, controller: :home, action: :index %>
+            <%= link_to '<li>Esport</li>'.html_safe, controller: :esport, action: :index %>
+            <%= link_to '<li>Moto GP</li>'.html_safe, controller: :motogp, action: :index %>
+            <%= link_to '<li>Moto 2</li>'.html_safe, controller: :moto2, action: :index %>
+            <%= link_to '<li>Moto 3</li>'.html_safe, controller: :moto3, action: :index %>
             <%= link_to '<li>Formula 1</li>'.html_safe, controller: :formula1, action: :index %>
           </ul>
         </nav>
@@ -67,7 +70,6 @@
           <div>
             <ul>
               <li class='white'>Currently we offer:</li>
-              <%= link_to '<li>Football</li>'.html_safe %>
               <%= link_to '<li>Esport</li>'.html_safe %>
               <%= link_to '<li>Moto GP</li>'.html_safe %>
               <%= link_to '<li>Moto 2</li>'.html_safe %>

@@ -3,4 +3,11 @@ class ApplicationController < ActionController::Base
 
   def index
   end
+
+  def about_us
+    @test = '123'
+  end
+
+  def about_our_work
+  end
 end

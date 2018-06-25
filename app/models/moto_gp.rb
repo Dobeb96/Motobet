@@ -1,0 +1,2 @@
+class MotoGp < ApplicationRecord
+end

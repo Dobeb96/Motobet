@@ -1,0 +1,2 @@
+class Motogp < ApplicationRecord
+end

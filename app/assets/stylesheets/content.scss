@@ -85,3 +85,16 @@ a {
     color: black;
   }
 }
+table form input {
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: underline;
+  color: white;
+  border: none;
+  background-color: $primary-color;
+}
+
+// FORM
+form * {
+  text-align: left;
+}

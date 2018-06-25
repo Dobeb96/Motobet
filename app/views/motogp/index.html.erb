@@ -1,0 +1,59 @@
+<section id='header'>
+  <h1>Today's best picks => Moto GP</h1>
+</section>
+
+<aside id='info1' class='info'>
+  
+</aside>
+
+<section id='results'>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Rider one</th>
+        <th>Rider two</th>
+        <th>League</th>
+        <th>Odds</th>
+        <th>% chance</th>
+        <th>Pick</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @motogps.each do |motogp| %>
+        <tr>
+          <td>
+            <% if motogp.match_starts_at.today? %>
+              <%= motogp.match_starts_at.strftime("%H:%M %Z") %>
+            <% else %>
+              <%= motogp.match_starts_at.strftime("%-d/%m/%y") %>
+            <% end %>
+          </td>
+          <td><%= motogp.team_1 %></td>
+          <td><%= motogp.team_2 %></td>
+          <td><%= motogp.league %></td>
+          <td><%= motogp.odds %></td>
+          <td><%= motogp.chance %>%</td>
+          <td><%= motogp.pick %></td>
+          <% case motogp.status %>
+          <% when 0 %>
+          <%= '<td class="undefined">AWAITING</td>'.html_safe %>
+          <% when 1 %>
+          <%= '<td class="won">WON</td>'.html_safe %>
+          <% when 2 %>
+          <%= '<td class="lost">LOST</td>'.html_safe %>
+          <% when 3 %>
+          <%= '<td class="lost">DRAW</td>'.html_safe %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate(@motogps) %>
+</section>
+
+  <aside id='legend'>
+    <p><strong>who's better</strong> - which of these two riders would finish first – 1 means rider one, 2 means rider two</p>
+    <p><strong>position</strong> - which position would that rider have – V means he will win, 1-3 means he will be at least 3rd, 1-5 means at least 5th etc.</p>
+  </aside>

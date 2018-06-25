@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  match_starts_at: 2018-06-25 16:14:37
+  team_1: MyString
+  team_2: MyString
+  league: MyString
+  odds: 1.5
+  chance: 1
+  pick: MyString
+  status: 1
+  main_page: 
+
+two:
+  match_starts_at: 2018-06-25 16:14:37
+  team_1: MyString
+  team_2: MyString
+  league: MyString
+  odds: 1.5
+  chance: 1
+  pick: MyString
+  status: 1
+  main_page: 

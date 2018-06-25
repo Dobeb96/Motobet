@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='admin_mode'>edit_mode: on</h1>
+
+<section id='results' class='wider'>
+  <table>
+    <thead>
+      <tr>
+        <th>Match starts at</th>
+        <th>Rider one</th>
+        <th>Rider two</th>
+        <th>League</th>
+        <th>Odds</th>
+        <th>Chance</th>
+        <th>Pick</th>
+        <th>Status</th>
+        <th>Main page</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @motogps.each do |motogp| %>
+        <tr>
+          <td><%= motogp.match_starts_at %></td>
+          <td><%= motogp.team_1 %></td>
+          <td><%= motogp.team_2 %></td>
+          <td><%= motogp.league %></td>
+          <td><%= motogp.odds %></td>
+          <td><%= motogp.chance %>%</td>
+          <td><%= motogp.pick %></td>
+          <% case motogp.status %>
+          <% when 0 %>
+          <%= '<td class="undefined">AWAITING</td>'.html_safe %>
+          <% when 1 %>
+          <%= '<td class="won">WON</td>'.html_safe %>
+          <% when 2 %>
+          <%= '<td class="lost">LOST</td>'.html_safe %>
+          <% when 3 %>
+          <%= '<td class="lost">DRAW</td>'.html_safe %>
+          <% end %>
+          <td><%= motogp.main_page %></td>
+          <td><%= link_to 'Show', motogp %></td>
+          <td><%= link_to 'Edit', edit_motogp_path(motogp) %></td>
+          <td><%= button_to 'Destroy', motogp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Add record', new_motogp_path %>
+</section>

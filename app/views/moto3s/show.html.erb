@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Match starts at:</strong>
+  <%= @moto3.match_starts_at %>
+</p>
+
+<p>
+  <strong>Team 1:</strong>
+  <%= @moto3.team_1 %>
+</p>
+
+<p>
+  <strong>Team 2:</strong>
+  <%= @moto3.team_2 %>
+</p>
+
+<p>
+  <strong>League:</strong>
+  <%= @moto3.league %>
+</p>
+
+<p>
+  <strong>Odds:</strong>
+  <%= @moto3.odds %>
+</p>
+
+<p>
+  <strong>Chance:</strong>
+  <%= @moto3.chance %>
+</p>
+
+<p>
+  <strong>Pick:</strong>
+  <%= @moto3.pick %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @moto3.status %>
+</p>
+
+<p>
+  <strong>Main page:</strong>
+  <%= @moto3.main_page %>
+</p>
+
+<%= link_to 'Edit', edit_moto3_path(@moto3) %> |
+<%= link_to 'Back', moto3s_path %>

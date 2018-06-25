@@ -1,0 +1,62 @@
+<%= form_with(model: moto2, local: true) do |form| %>
+  <% if moto2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(moto2.errors.count, "error") %> prohibited this moto2 from being saved:</h2>
+
+      <ul>
+      <% moto2.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :match_starts_at %>
+    <%= form.datetime_select :match_starts_at, id: :moto2_match_starts_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_1 %>
+    <%= form.text_field :team_1, id: :moto2_team_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_2 %>
+    <%= form.text_field :team_2, id: :moto2_team_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :league %>
+    <%= form.text_field :league, id: :moto2_league %>
+  </div>
+
+  <div class="field">
+    <%= form.label :odds %>
+    <%= form.text_field :odds, id: :moto2_odds %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chance %>
+    <%= form.number_field :chance, id: :moto2_chance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pick %>
+    <%= form.text_field :pick, id: :moto2_pick %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :moto2_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :main_page %>
+    <%= form.text_field :main_page, id: :moto2_main_page %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

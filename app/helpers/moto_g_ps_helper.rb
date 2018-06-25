@@ -1,0 +1,2 @@
+module MotoGPsHelper
+end
