@@ -11,7 +11,6 @@
   </head>
 
   <body>
-    <%= render 'admin_nav' %>
     <div class='page_wrapper'>
       <div id='top_panel_wrapper'>
         <div id='top_panel'>
@@ -22,12 +21,10 @@
               <div class='description'>contact@motobet.pl</div>
             </div>
             <div>
-              <div class='marked'><%= link_to 'Who are we',
-                controller: :application, action: :about_us %></div>
+              <div class='marked'><%= link_to 'Who are we', about_us_url %></div>
             </div>
             <div>
-              <div class='marked'><%= link_to 'How does it work',
-                controller: :application, action: :about_our_work %></div>
+              <div class='marked'><%= link_to 'How does it work', about_our_work_url %></div>
             </div>
           </aside>
         </div>
@@ -35,12 +32,12 @@
       <div id='nav_wrapper'>
         <nav>
           <ul>
-            <%= link_to '<li>Home</li>'.html_safe, controller: :home, action: :index %>
-            <%= link_to '<li>Esport</li>'.html_safe, controller: :esport, action: :index %>
-            <%= link_to '<li>Moto GP</li>'.html_safe, controller: :motogp, action: :index %>
-            <%= link_to '<li>Moto 2</li>'.html_safe, controller: :moto2, action: :index %>
-            <%= link_to '<li>Moto 3</li>'.html_safe, controller: :moto3, action: :index %>
-            <%= link_to '<li>Formula 1</li>'.html_safe, controller: :formula1, action: :index %>
+            <%= link_to '<li>Home</li>'.html_safe, root_url  %>
+            <%= link_to '<li>Esport</li>'.html_safe, _esport_url  %>
+            <%= link_to '<li>Moto GP</li>'.html_safe, _motogp_url  %>
+            <%= link_to '<li>Moto 2</li>'.html_safe, _moto2_url %>
+            <%= link_to '<li>Moto 3</li>'.html_safe, _moto3_url %>
+            <%= link_to '<li>Formula 1</li>'.html_safe, _formula1_url %>
           </ul>
         </nav>
       </div>
@@ -53,6 +50,10 @@
         </div>
       </aside>
 
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+
       <main>
         <%= yield %>
       </main>
@@ -62,18 +63,18 @@
           <div>
             <ul>
               <li>Contact us <br> <span class='white'>contact@motobet.com</span></li>
-              <li>Check who we are</li>
-              <li>Check how does it work</li>
+              <li><%= link_to 'Who we are', about_us_url %></li>
+              <li><%= link_to 'How it all works', about_our_work_url %></li>
             </ul>
           </div>
           <div>
             <ul>
               <li class='white'>Currently we offer:</li>
-            <%= link_to '<li>Esport</li>'.html_safe, controller: :esport, action: :index %>
-            <%= link_to '<li>Moto GP</li>'.html_safe, controller: :motogp, action: :index %>
-            <%= link_to '<li>Moto 2</li>'.html_safe, controller: :moto2, action: :index %>
-            <%= link_to '<li>Moto 3</li>'.html_safe, controller: :moto3, action: :index %>
-            <%= link_to '<li>Formula 1</li>'.html_safe, controller: :formula1, action: :index %>
+            <%= link_to '<li>Esport</li>'.html_safe, _esport_url %>
+            <%= link_to '<li>Moto GP</li>'.html_safe, _motogp_url %>
+            <%= link_to '<li>Moto 2</li>'.html_safe, _moto2_url %>
+            <%= link_to '<li>Moto 3</li>'.html_safe, _moto3_url %>
+            <%= link_to '<li>Formula 1</li>'.html_safe, _formula1_url %>
             </ul>
           </div>
         </div>
@@ -86,5 +87,6 @@
         <span>&copy; all rights reserved / <a href='http://www.freepik.com' target="_blank">logo design - timmdesign</a></span>
       </footer>
     </div>
+    <%= render 'admin_nav' if user_signed_in? %>
   </body>
 </html>

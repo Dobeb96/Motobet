@@ -1,5 +1,6 @@
 class Formula1sController < ApplicationController
   before_action :set_formula1, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /formula1s
   # GET /formula1s.json

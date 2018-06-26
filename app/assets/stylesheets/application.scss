@@ -11,6 +11,14 @@ body {
 strong {
   font-weight: normal;
 }
+.notice, .alert {
+  text-align: center;
+}
+.button-right {
+  padding: 0 1em 1em 0;
+  width: 100%;
+  text-align: right;
+}
 
 // TOP PANEL
 #logo {

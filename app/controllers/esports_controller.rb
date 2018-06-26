@@ -1,5 +1,6 @@
 class EsportsController < ApplicationController
   before_action :set_esport, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /esports
   # GET /esports.json

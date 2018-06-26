@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'home/index'
+
+  devise_for :users
 
   resources :esports
   resources :motogps
@@ -8,14 +9,14 @@ Rails.application.routes.draw do
   resources :moto3s
   resources :formula1s
 
-  get 'esport' => 'esport#index'
-  get 'motogp' => 'motogp#index'
-  get 'moto2' => 'moto2#index'
-  get 'moto3' => 'moto3#index'
-  get 'formula1' => 'formula1#index'
+  get 'esport' => 'esport#index', as: '_esport'
+  get 'motogp' => 'motogp#index', as: '_motogp'
+  get 'moto2' => 'moto2#index', as: '_moto2'
+  get 'moto3' => 'moto3#index', as: '_moto3'
+  get 'formula1' => 'formula1#index', as: '_formula1'
 
-  get 'about_us' => 'application#about_us'
-  get 'about_our_work' => 'application#about_our_work'
+  get 'about_us' => 'application#about_us', as: 'about_us'
+  get 'about_our_work' => 'application#about_our_work', as: 'about_our_work'
 
-  root 'application#index'
+  root 'home#index'
 end

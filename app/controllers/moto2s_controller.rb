@@ -1,5 +1,6 @@
 class Moto2sController < ApplicationController
   before_action :set_moto2, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /moto2s
   # GET /moto2s.json

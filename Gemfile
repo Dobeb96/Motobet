@@ -18,6 +18,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'kaminari' # pagination
 gem 'jquery-rails'
+gem 'active_record_union'
+gem 'devise' #authentication
 
 group :development, :test do
   gem 'sqlite3'

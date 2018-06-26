@@ -1,5 +1,6 @@
 class MotogpsController < ApplicationController
   before_action :set_motogp, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /motogps
   # GET /motogps.json

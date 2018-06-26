@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   end
 
   def about_us
-    @test = '123'
   end
 
   def about_our_work
