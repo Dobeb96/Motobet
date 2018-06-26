@@ -26,7 +26,6 @@ strong {
   padding: 0 2%;
   object-fit: contain;
 }
-
 #top_panel_wrapper {
   background-color: $third-color;
   #top_panel {
@@ -55,6 +54,30 @@ strong {
         color: #eee;
         text-transform: uppercase;
         font-family: $secondary-font;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #logo {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  #top_panel_wrapper {
+    #top_panel {
+      flex-direction: column;
+      #additional {
+        text-align: center;
+        flex-wrap: wrap;
+        // flex-direction: column;
+        div {
+          padding: .3em .4em;
+          div {
+            padding: 0;
+          }
+        }
       }
     }
   }
@@ -95,6 +118,11 @@ strong {
         border-top: 2px solid $secondary-accent;
       }
     }
+  }
+}
+@media screen and (max-width: 700px) {
+  #nav_wrapper nav ul {
+    flex-direction: column;
   }
 }
 
@@ -142,12 +170,29 @@ strong {
     } 
   }
 }
+@media screen and (max-width: 1200px) {
+  #landscape_image {
+    background-position: 30% 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  #landscape_image {
+    .flex_wrapper h1 {
+      max-width: 98%;
+    }
+  }
+}
 
 // MAIN
 main {
   text-align: center;
   color: white;
   padding: 2% 8% 0;
+}
+@media screen and (max-width: 1200px) {
+  main {
+    padding: 0;
+  }
 }
 
 .pagination {
@@ -176,7 +221,6 @@ main {
     display: flex;
     justify-content: space-evenly;
     div {
-      // width: 40%;
       text-align: center;
       .white {
         color: white;
@@ -203,6 +247,24 @@ main {
   ul {
     list-style-type: none;
     margin: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #index {
+    .flexbox {
+      flex-direction: column;
+      div {
+        padding: .5em 0;
+        ul, ul a {
+          padding-left: 0;
+          text-align: center;
+        }
+      }
+    }
+    .description {
+      padding: 0 .4em;
+      text-align: justify;
+    }
   }
 }
 

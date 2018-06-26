@@ -27,6 +27,11 @@ a {
   font-family: 'Nothing You Could Do', cursive;
   text-align: right;
 }
+@media screen and (max-width: 1200px) {
+  .info {
+    padding: 0 .2em;
+  }
+}
 
 // RESULTS TABLE
 #results table {
@@ -64,6 +69,19 @@ a {
   tbody {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #results {
+    padding: 0;
+    max-width: 100%;
+    overflow: scroll;
+    table {
+      min-width: 800px;
+      th, td {
+        padding: auto .2em;
+      }
+    }
   }
 }
 
