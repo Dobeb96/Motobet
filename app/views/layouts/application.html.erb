@@ -15,6 +15,7 @@
       <div id='top_panel_wrapper'>
         <div id='top_panel'>
           <%= image_tag 'logo.png', alt: 'Motobet logo', id: 'logo' %>
+
           <aside id='additional'>
             <div>
               <div class='marked'>Contact us</div>
@@ -27,9 +28,15 @@
               <div class='marked'><%= link_to 'How does it work', about_our_work_url %></div>
             </div>
           </aside>
+
+          <button id="ham_menu" class="hamburger hamburger--spin" type="button" onclick="toggle();">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
       </div>
-      <div id='nav_wrapper'>
+      <div id='nav_wrapper' class='hide'>
         <nav>
           <ul>
             <%= link_to '<li>Home</li>'.html_safe, root_url  %>
@@ -89,4 +96,18 @@
     </div>
     <%= render 'admin_nav' if user_signed_in? %>
   </body>
+  <script>
+    toggle = function() {
+      menu = document.getElementById('ham_menu');
+      nav = document.getElementById('nav_wrapper');
+      toggle_class = 'is-active'
+      if (menu.classList.contains(toggle_class)) {
+        menu.classList.remove(toggle_class);
+        nav.classList.add('hide');
+      } else {
+        menu.classList.add(toggle_class);
+        nav.classList.remove('hide');
+      }
+    }
+  </script>
 </html>
