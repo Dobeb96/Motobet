@@ -4,6 +4,9 @@
 $hamburger-layer-color: white;
 @import "hamburgers";
 
+* {
+  outline: none;
+}
 body {
   color: white;
   margin: 0;
