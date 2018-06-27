@@ -111,6 +111,21 @@ table form input {
   border: none;
   background-color: $primary-color;
 }
+form {
+  padding: .2em;
+  font-size: 1em;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  .field, .actions {
+    text-align: right;
+    input {
+      text-align: left;
+      width: 300px;
+      padding: .4em;
+    }
+  }
+}
 
 // FORM
 form * {

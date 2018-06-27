@@ -1,3 +1,7 @@
+<section id='header'>
+  <h1>Today's best picks => All disciplines</h1>
+</section>
+
 <aside id='info1' class='info'>
   Today's most recommended plays chosen by us, from all disciplines
 </aside>
@@ -40,11 +44,11 @@
           <% when 2 %>
           <%= '<td class="lost">LOST</td>'.html_safe %>
           <% when 3 %>
-          <%= '<td class="lost">DRAW</td>'.html_safe %>
+          <%= '<td class="undefined">REFUND</td>'.html_safe %>
           <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
-
+  <%= paginate(@main_page_bets) %>
 </section>

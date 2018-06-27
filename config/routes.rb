@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get 'about_us' => 'application#about_us', as: 'about_us'
   get 'about_our_work' => 'application#about_our_work', as: 'about_our_work'
 
+  get 'admin' => redirect('/users/sign_in')
+
   root 'home#index'
 end
