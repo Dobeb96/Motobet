@@ -5,7 +5,7 @@ class Moto3sController < ApplicationController
   # GET /moto3s
   # GET /moto3s.json
   def index
-    @moto3s = Moto3.all
+    @moto3s = Moto3.order('match_starts_at DESC').page(params[:page]).per(10)
   end
 
   # GET /moto3s/1

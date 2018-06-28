@@ -5,7 +5,7 @@ class EsportsController < ApplicationController
   # GET /esports
   # GET /esports.json
   def index
-    @esports = Esport.all
+    @esports = Esport.order('match_starts_at DESC').page(params[:page]).per(10)
   end
 
   # GET /esports/1

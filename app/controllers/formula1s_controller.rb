@@ -5,7 +5,7 @@ class Formula1sController < ApplicationController
   # GET /formula1s
   # GET /formula1s.json
   def index
-    @formula1s = Formula1.all
+    @formula1s = Formula1.order('match_starts_at DESC').page(params[:page]).per(10)
   end
 
   # GET /formula1s/1

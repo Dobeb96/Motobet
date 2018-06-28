@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='admin_mode'>edit_mode: on</h1>
+
+<section id='results' class='wider'>
+  <table>
+    <thead>
+      <tr>
+        <th>Match starts at</th>
+        <th><%= team_name %> one</th>
+        <th><%= team_name %> two</th>
+        <th>League</th>
+        <th>Odds</th>
+        <th>Chance</th>
+        <th>Pick</th>
+        <th>Status</th>
+        <th>Main page</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% data.each do |datum| %>
+        <tr>
+          <td><%= datum.match_starts_at %></td>
+          <td><%= datum.team_1 %></td>
+          <td><%= datum.team_2 %></td>
+          <td><%= datum.league %></td>
+          <td><%= datum.odds %></td>
+          <td><%= datum.chance %>%</td>
+          <td><%= datum.pick %></td>
+          <% case datum.status %>
+          <% when 0 %>
+          <%= '<td class="undefined">AWAITING</td>'.html_safe %>
+          <% when 1 %>
+          <%= '<td class="won">WON</td>'.html_safe %>
+          <% when 2 %>
+          <%= '<td class="lost">LOST</td>'.html_safe %>
+          <% when 3 %>
+          <%= '<td class="undefined">REFUND</td>'.html_safe %>
+          <% end %>
+          <td><%= datum.main_page %></td>
+          <td><%= link_to 'Show', datum %></td>
+          <td><%= link_to 'Edit', eval(edit) %></td>
+          <td><%= button_to 'Destroy', datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Add record', eval(new) %>
+  <%= paginate(data) %>
+</section>

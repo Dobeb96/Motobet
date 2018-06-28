@@ -5,7 +5,7 @@ class MotogpsController < ApplicationController
   # GET /motogps
   # GET /motogps.json
   def index
-    @motogps = Motogp.all
+    @motogps = Motogp.order('match_starts_at DESC').page(params[:page]).per(10)
   end
 
   # GET /motogps/1
