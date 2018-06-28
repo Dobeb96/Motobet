@@ -93,10 +93,20 @@ a {
   margin: 1em auto;
   max-width: $max-width;
   background-color: $secondary-color;
+  .align_left {
+    text-align: left;
+    p {
+      padding-left: 1em;
+      font-weight: bold;
+    }
+  }
 }
 @media screen and (max-width: 1200px) {
   #legend {
     margin: 1em .5em;
+    .align_left p {
+      padding-left: 0;
+    }
   }
 }
 
