@@ -17,10 +17,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'kaminari' # pagination
-gem 'jquery-rails'
+gem 'jquery-rails' # jquery
 gem 'active_record_union'
 gem 'devise' #authentication
 gem 'hamburgers' #menu
+gem 'google-analytics-rails' # google analytics
 
 group :development, :test do
   gem 'sqlite3'
