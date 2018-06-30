@@ -2,11 +2,11 @@
   <nav>
     <ul>
       <%= link_to '<li></li>'.html_safe %>
+      <%= link_to '<li>Edit Football</li>'.html_safe, footballs_url  %>
+      <%= link_to '<li>Edit Basketball</li>'.html_safe, basketballs_url  %>
       <%= link_to '<li>Edit Esport</li>'.html_safe, esports_url  %>
       <%= link_to '<li>Edit Formula 1</li>'.html_safe, formula1s_url %>
       <%= link_to '<li>Edit Moto GP</li>'.html_safe, motogps_url  %>
-      <%= link_to '<li>Edit Moto 2</li>'.html_safe, moto2s_url %>
-      <%= link_to '<li>Edit Moto 3</li>'.html_safe, moto3s_url %>
     </ul>
   </nav>
   <button class="button button-right"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></button>

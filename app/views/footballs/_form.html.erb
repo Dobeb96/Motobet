@@ -1,0 +1,62 @@
+<%= form_with(model: football, local: true) do |form| %>
+  <% if football.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(football.errors.count, "error") %> prohibited this football from being saved:</h2>
+
+      <ul>
+      <% football.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :match_starts_at %>
+    <%= form.datetime_select :match_starts_at, id: :football_match_starts_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_1 %>
+    <%= form.text_field :team_1, id: :football_team_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_2 %>
+    <%= form.text_field :team_2, id: :football_team_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :league %>
+    <%= form.text_field :league, id: :football_league %>
+  </div>
+
+  <div class="field">
+    <%= form.label :odds %>
+    <%= form.text_field :odds, id: :football_odds %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chance %>
+    <%= form.number_field :chance, id: :football_chance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pick %>
+    <%= form.text_field :pick, id: :football_pick %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :football_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :main_page %>
+    <%= form.text_field :main_page, id: :football_main_page %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

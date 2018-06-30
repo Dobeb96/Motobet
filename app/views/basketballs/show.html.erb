@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Match starts at:</strong>
+  <%= @basketball.match_starts_at %>
+</p>
+
+<p>
+  <strong>Team 1:</strong>
+  <%= @basketball.team_1 %>
+</p>
+
+<p>
+  <strong>Team 2:</strong>
+  <%= @basketball.team_2 %>
+</p>
+
+<p>
+  <strong>League:</strong>
+  <%= @basketball.league %>
+</p>
+
+<p>
+  <strong>Odds:</strong>
+  <%= @basketball.odds %>
+</p>
+
+<p>
+  <strong>Chance:</strong>
+  <%= @basketball.chance %>
+</p>
+
+<p>
+  <strong>Pick:</strong>
+  <%= @basketball.pick %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @basketball.status %>
+</p>
+
+<p>
+  <strong>Main page:</strong>
+  <%= @basketball.main_page %>
+</p>
+
+<%= link_to 'Edit', edit_basketball_path(@basketball) %> |
+<%= link_to 'Back', basketballs_path %>

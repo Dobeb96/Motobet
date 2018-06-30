@@ -1,0 +1,14 @@
+<section id='header'>
+  <h1>Today's best picks => Football</h1>
+</section>
+
+<aside id='info1' class='info'>
+  In Football playing $10 on each bet would earn $<%= @profit %> for you in last thirty days
+</aside>
+
+<%= render partial: 'partials/output_table', locals: { data: @footballs, team_name: 'Team' } %>
+
+<aside id='legend'>
+  <span class='align_left'><p>LEGEND:</p></span>
+  <p><b>1</b> - team one to win, <b>X</b> - draw, <b>2</b> - team two to win</p>
+</aside>

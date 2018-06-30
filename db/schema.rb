@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180626154341) do
+ActiveRecord::Schema.define(version: 20180630065412) do
+
+  create_table "basketballs", force: :cascade do |t|
+    t.datetime "match_starts_at"
+    t.string "team_1"
+    t.string "team_2"
+    t.string "league"
+    t.float "odds"
+    t.integer "chance"
+    t.string "pick"
+    t.integer "status"
+    t.binary "main_page"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "esports", force: :cascade do |t|
+    t.datetime "match_starts_at"
+    t.string "team_1"
+    t.string "team_2"
+    t.string "league"
+    t.float "odds"
+    t.integer "chance"
+    t.string "pick"
+    t.integer "status"
+    t.binary "main_page"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "footballs", force: :cascade do |t|
     t.datetime "match_starts_at"
     t.string "team_1"
     t.string "team_2"
