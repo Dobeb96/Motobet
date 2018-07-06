@@ -15,7 +15,6 @@
         <th>Pick</th>
         <th>Status</th>
         <th>Main page</th>
-        <th>Show</th>
         <th>Edit</th>
         <th>Destroy</th>
       </tr>
@@ -42,7 +41,6 @@
           <%= '<td class="undefined">REFUND</td>'.html_safe %>
           <% end %>
           <td><%= datum.main_page %></td>
-          <td><%= link_to 'Show', datum %></td>
           <td><%= link_to 'Edit', eval(edit) %></td>
           <td><%= button_to 'Destroy', datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>

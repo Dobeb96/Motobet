@@ -29,8 +29,8 @@ class Formula1sController < ApplicationController
 
     respond_to do |format|
       if @formula1.save
-        format.html { redirect_to @formula1, notice: 'Formula1 was successfully created.' }
-        format.json { render :show, status: :created, location: @formula1 }
+        format.html { redirect_to :action=>'index', notice: 'Formula1 was successfully created.' }
+        format.json { render :index, status: :created, location: @formula1 }
       else
         format.html { render :new }
         format.json { render json: @formula1.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class Formula1sController < ApplicationController
   def update
     respond_to do |format|
       if @formula1.update(formula1_params)
-        format.html { redirect_to @formula1, notice: 'Formula1 was successfully updated.' }
-        format.json { render :show, status: :ok, location: @formula1 }
+        format.html { redirect_to :action=>'index', notice: 'Formula1 was successfully updated.' }
+        format.json { render :index, status: :ok, location: @formula1 }
       else
         format.html { render :edit }
         format.json { render json: @formula1.errors, status: :unprocessable_entity }

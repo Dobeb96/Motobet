@@ -29,8 +29,8 @@ class EsportsController < ApplicationController
 
     respond_to do |format|
       if @esport.save
-        format.html { redirect_to @esport, notice: 'Esport was successfully created.' }
-        format.json { render :show, status: :created, location: @esport }
+        format.html { redirect_to :action=>'index', notice: 'Esport was successfully created.' }
+        format.json { render :index, status: :created, location: @esport }
       else
         format.html { render :new }
         format.json { render json: @esport.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class EsportsController < ApplicationController
   def update
     respond_to do |format|
       if @esport.update(esport_params)
-        format.html { redirect_to @esport, notice: 'Esport was successfully updated.' }
-        format.json { render :show, status: :ok, location: @esport }
+        format.html { redirect_to :action=>'index', notice: 'Esport was successfully updated.' }
+        format.json { render :index, status: :ok, location: @esport }
       else
         format.html { render :edit }
         format.json { render json: @esport.errors, status: :unprocessable_entity }

@@ -29,8 +29,8 @@ class FootballsController < ApplicationController
 
     respond_to do |format|
       if @football.save
-        format.html { redirect_to @football, notice: 'Football was successfully created.' }
-        format.json { render :show, status: :created, location: @football }
+        format.html { redirect_to :action=>'index', notice: 'Football was successfully created.' }
+        format.json { render :index, status: :created, location: @football }
       else
         format.html { render :new }
         format.json { render json: @football.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class FootballsController < ApplicationController
   def update
     respond_to do |format|
       if @football.update(football_params)
-        format.html { redirect_to @football, notice: 'Football was successfully updated.' }
-        format.json { render :show, status: :ok, location: @football }
+        format.html { redirect_to :action=>'index', notice: 'Football was successfully updated.' }
+        format.json { render :index, status: :ok, location: @football }
       else
         format.html { render :edit }
         format.json { render json: @football.errors, status: :unprocessable_entity }

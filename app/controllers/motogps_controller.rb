@@ -29,8 +29,8 @@ class MotogpsController < ApplicationController
 
     respond_to do |format|
       if @motogp.save
-        format.html { redirect_to @motogp, notice: 'Motogp was successfully created.' }
-        format.json { render :show, status: :created, location: @motogp }
+        format.html { redirect_to :action=>'index', notice: 'Motogp was successfully created.' }
+        format.json { render :index, status: :created, location: @motogp }
       else
         format.html { render :new }
         format.json { render json: @motogp.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class MotogpsController < ApplicationController
   def update
     respond_to do |format|
       if @motogp.update(motogp_params)
-        format.html { redirect_to @motogp, notice: 'Motogp was successfully updated.' }
-        format.json { render :show, status: :ok, location: @motogp }
+        format.html { redirect_to :action=>'index', notice: 'Motogp was successfully updated.' }
+        format.json { render :index, status: :ok, location: @motogp }
       else
         format.html { render :edit }
         format.json { render json: @motogp.errors, status: :unprocessable_entity }

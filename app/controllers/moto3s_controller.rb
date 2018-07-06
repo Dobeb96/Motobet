@@ -29,8 +29,8 @@ class Moto3sController < ApplicationController
 
     respond_to do |format|
       if @moto3.save
-        format.html { redirect_to @moto3, notice: 'Moto3 was successfully created.' }
-        format.json { render :show, status: :created, location: @moto3 }
+        format.html { redirect_to :action=>'index', notice: 'Moto3 was successfully created.' }
+        format.json { render :index, status: :created, location: @moto3 }
       else
         format.html { render :new }
         format.json { render json: @moto3.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class Moto3sController < ApplicationController
   def update
     respond_to do |format|
       if @moto3.update(moto3_params)
-        format.html { redirect_to @moto3, notice: 'Moto3 was successfully updated.' }
-        format.json { render :show, status: :ok, location: @moto3 }
+        format.html { redirect_to :action=>'index', notice: 'Moto3 was successfully updated.' }
+        format.json { render :index, status: :ok, location: @moto3 }
       else
         format.html { render :edit }
         format.json { render json: @moto3.errors, status: :unprocessable_entity }
